@@ -10,12 +10,14 @@ Route::get('/posts', function () {
     return view('posts', ['title' => 'Blog', 'posts' => [
         [
             'id'    => 1,
+            'slug' => 'judul-article-1',
             'title' => 'Judul Article 1',
             'author' => 'Naufal Dzakwan',
             'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et rerum nulla debitis, mollitia atque libero ut! Maxime libero explicabo hic, minima exercitationem, esse numquam, temporibus sit aliquam sint odio eveniet?',
         ],
         [
             'id'    => 2,
+            'slug' => 'judul-article-2',
             'title' => 'Judul Article 2',
             'author' => 'Naufal Dzakwan',
             'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit eveniet accusamus odio aut. Laborum voluptates harum nemo saepe dignissimos laudantium vero, maxime, ipsam, nobis molestias tempora nesciunt ipsa assumenda expedita.',
@@ -23,24 +25,26 @@ Route::get('/posts', function () {
     ]]);
 });
 
-Route::get('/posts/{id}', function ($id) {
+Route::get('/posts/{slug}', function ($slug) {
     $posts = [
         [
             'id'    => 1,
+            'slug' => 'judul-article-1',
             'title' => 'Judul Article 1',
             'author' => 'Naufal Dzakwan',
             'body' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Et rerum nulla debitis, mollitia atque libero ut! Maxime libero explicabo hic, minima exercitationem, esse numquam, temporibus sit aliquam sint odio eveniet?',
         ],
         [
             'id'    => 2,
+            'slug' => 'judul-article-2',
             'title' => 'Judul Article 2',
             'author' => 'Naufal Dzakwan',
             'body' => 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Reprehenderit eveniet accusamus odio aut. Laborum voluptates harum nemo saepe dignissimos laudantium vero, maxime, ipsam, nobis molestias tempora nesciunt ipsa assumenda expedita.',
         ]
     ];
 
-    $post = Arr::first($posts, function ($post) use ($id) {
-        return $post['id'] == $id;
+    $post = Arr::first($posts, function ($post) use ($slug) {
+        return $post['slug'] == $slug;
     });
     return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
