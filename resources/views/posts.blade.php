@@ -5,7 +5,7 @@
 
   <article class="text-white py-8 max-w-screen-md border-g-300">
     <a href="/posts/{{ $post['slug'] }}" class="hover-underline">
-    <h2 class="mb-1 text-3xl tracking-tighter font-bold">{{ $post['title'] }}</h2>
+    <h2 class="mb-1 text-3xl tracking-tighter font-bold">{{ $post['slug'] }}</h2>
     </a>
     <div>
       <a href="">{{ $post['author'] }}</a> | IT
