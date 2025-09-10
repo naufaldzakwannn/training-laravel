@@ -10,7 +10,7 @@
       <a href="/categories/{{ $post->category->slug }}" class="hover:underline text-base text-gray-500">{{ $post->category->name }}</a> | {{ $post->created_at->diffForHumans()}} 
     </div>
     <p class="my-4 font-light">{{ ($post['body']) }}</p>
-    <a href="/posts" class="font-medium text-blue-500">&laquo; Back to Post;</a>
+    <a href="/posts" class="font-medium text-blue-500">&laquo; Back to Post</a>
   </article>
 
 </x-layout>

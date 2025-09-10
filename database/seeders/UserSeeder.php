@@ -22,7 +22,21 @@ class UserSeeder extends Seeder
                 'email' => 'naufal6@gmail.com',
                 'email_verified_at' => now(),
                 'password' => Hash::make('password'),
-                'remember_token' => Str::random(10)
+                'remember_token' => Str::random(10),
+                'created_at' => now(),
+                'updated_at' => now()
+            ]
+        ]);
+        DB::table('users')->insert([
+            [
+                'name' => 'wiwi',
+                'username' => 'wiwi6',
+                'email' => 'wiwi6@gmail.com',
+                'email_verified_at' => now(),
+                'password' => Hash::make('password'),
+                'remember_token' => Str::random(10),
+                'created_at' => now(),
+                'updated_at' => now()
             ]
         ]);
     }

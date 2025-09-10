@@ -16,7 +16,17 @@ class CategorySeeder extends Seeder
         DB::table('categories')->insert([
             [
                 'name' => 'Web Design',
-                'slug' => 'web-design'
+                'slug' => 'web-design',
+                'created_at' => now(),
+                'updated_at' => now()
+            ]
+        ]);
+        DB::table('categories')->insert([
+            [
+                'name' => 'Web Developer',
+                'slug' => 'web-developer',
+                'created_at' => now(),
+                'updated_at' => now()
             ]
         ]);
     }

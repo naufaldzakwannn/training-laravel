@@ -22,7 +22,7 @@ Route::get('/authors/{user:username}', function (User $user) {
 });
 
 Route::get('/categories/{category:slug}', function (Category $category) {
-    return view('posts', ['title' => ' Articles In' . $category->name, 'posts' => $category->posts]);
+    return view('posts', ['title' => ' Articles In ' . $category->name, 'posts' => $category->posts]);
 });
 
 Route::get('/about', function () {

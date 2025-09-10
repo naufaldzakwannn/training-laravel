@@ -11,6 +11,8 @@ class Post extends Model //terhubung ke tabel posts
     use HasFactory;
     protected $fillable = ['title', 'author', 'slug', 'body'];
 
+    public $timestamps = true; // default-nya true, pastikan tidak false
+
     public function author(): BelongsTo
     {
         return $this->belongsTo(User::class);
