@@ -7,14 +7,16 @@
     <a href="/posts/{{ $post['slug'] }}" class="hover-underline">
     <h2 class="mb-1 text-3xl tracking-tighter font-bold">{{ $post['slug'] }}</h2>
     </a>
-    <div class="text-base">
-      <a href="/authors/{{ $post->author->id }}" class="hover:underline">{{ $post->author->name }}</a> | {{ $post->created_at->diffForHumans()}}
+    <div>
+      By
+      <a href="/authors/{{ $post->author->username }}" class="hover:underline text-base text-gray-500">{{ $post->author->name }} </a>
+      in
+      <a href="/categories/{{ $post->category->slug }}" class="hover:underline text-base text-gray-500">{{ $post->category->name }}</a> | {{ $post->created_at->diffForHumans()}}
     </div>
     <p class="my-4 font-light">{{ Str::limit($post['body'], 150) }}</p>
-    <a href="/posts/{{ $post['slug'] }}" class="font-medium text-blue-500 hover:underline">Read More &raquo;</a>
+    <a href="/posts/{{ $post['slug'] }}" class="font-medium text-blue-500 hover:underline text-base">Read More &raquo;</a>
   </article>
 
-      
   @endforeach
 
 </x-layout>
